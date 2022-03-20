@@ -1,0 +1,104 @@
+WEEk-1:
+    
+    Day-1:
+      
+      Build an end-to-end model for MNIST using jupyter notebook
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        1)Built a CNN model for mnist dataset from tensorflow in jupyter notebook and stored it in h5 file.
+        
+        2)Built a API for the model where we can insert a 0-9 digit image and our model predicts the number and the result is displayed.
+    
+
+
+    Day-2:
+       
+       1)Containerizing the whole application. Wrote a docker image for the application and build a Container.
+
+       2)Now diving the whole application into microservices.
+         API's for data_loading, data_preprocessing, model_trainig, model_testing, inferencing(frontend)
+       
+       3)Making all these api's take to each other. The first api loads the data and stores it in a location and returns the path for the locations,
+         The second takes the path from first api and retrievs the data and preprocesses it and does the same thing as first api.
+
+
+
+    Day-3:
+
+       1)Writing dockerfiles for all the apis.
+       2)Buliding them and running it in Containers.
+       3)Faced problem while mapping the Container ports to localhost.
+
+    
+
+    Day-4:
+
+       1)Wrote a docker-compose file for the apis with volumes included. Still faced an issue mapping to localhost.
+
+
+
+    Day-5:
+       
+       Discussed the issue with satwik sir and tried deleting all the docker images and writing it from scrach again.
+       Ran the file and run the apis in Container but still unable to clear the issue (mostly because of my laptop)
+
+
+
+
+=============================================================================================================================================================
+
+
+
+WEEK-2:
+
+    Day-1:
+
+        1)Working of LSTM Model
+
+        2)Anomaly detection using LSTM Model
+            Trained the model on 0's and 1's from the temperature values by taking 98 percentile.
+            Predicted the values(anaomly or not) for the last 4000 temperature values.
+      
+        3)Introduction to Kubeflows(tried installing kubeflows)
+
+      
+
+    Day-2:
+
+      1)Had a brief session on offline training and online training of the model(training, inferencing, data check,
+        weights get updated, trigger training(jenkins,..))
+
+      2)Realized that our model was biased because we had very less 1's in our data.
+
+      3)Saved the predicted values in a file and got mean square error((true-predicted)**2) and saved it.
+
+      4)Graph on error vs true_value
+        Realized that at every analomy, the error was high.
+    
+
+
+    Day-3:
+
+      1) Had discussion about the model getting biased. Instead of taking the percentile for the whole data, dividing it into small windows and finding the 
+         analomlies for that set of values. But how much size should our window be is also a question mark(should the model figure it out or should we 
+         explictly mention it).
+
+      2) Went throught some of the documentaions on kubeflow. Got a basic idea about kubeflow components.
+
+
+    
+    Day-4:
+      
+      1) Wrote a program that divides the temperature dataset into 20, find the Anomalies in it and mark it as 0's and 1's. Now with 0's and 1's dataset 
+         we train the LSTM Model and predict the values. Still our model was getting biased.
+      
+      2) Installed minikube.
+
+      3) Faced problem installing kubeflow (problem: didn't clone the files from github before installing the kubflow)
+
+    
+    
+    Day-5: Holi (Holiday)
+
+
+
+
